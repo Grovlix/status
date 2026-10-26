@@ -32,7 +32,26 @@ status-website:
   cname: status.grovlix.com
   logoUrl: https://raw.githubusercontent.com/Grovlix/status/master/assets/logos/grovlix.png
   favicon: https://raw.githubusercontent.com/Grovlix/status/master/assets/logos/grovlix.png
-  name: Grovlix
+  name: Grovlix Status
+  metaTags:
+    - name: "description"
+      content: "Live status and uptime of Grovlix apps: PopupSnap popups, InstaFeed, Product Studio, PopAutomate, Lucky Wheel and Countdown Timer."
+    - property: "og:title"
+      content: "Grovlix Status | Live app uptime"
+    - property: "og:description"
+      content: "Live status and uptime of Grovlix apps: PopupSnap popups, InstaFeed, Product Studio, PopAutomate, Lucky Wheel and Countdown Timer."
+    - property: "og:type"
+      content: "website"
+    - property: "og:url"
+      content: "https://status.grovlix.com/"
+    - property: "og:image"
+      content: "https://raw.githubusercontent.com/Grovlix/status/master/assets/logos/grovlix.png"
+    - name: "twitter:card"
+      content: "summary"
+    - name: "twitter:title"
+      content: "Grovlix Status | Live app uptime"
+    - name: "twitter:description"
+      content: "Live status and uptime of Grovlix apps: PopupSnap popups, InstaFeed, Product Studio, PopAutomate, Lucky Wheel and Countdown Timer."
   introTitle: "**Grovlix** apps status"
   introMessage: "Live status of the apps merchants run in their stores: **PopupSnap** smart popups, **InstaFeed** Instagram and TikTok feeds, **Product Studio** product customizer, **PopAutomate** automated campaigns, the **Lucky Wheel** and the **Countdown Timer**."
   navbar:
