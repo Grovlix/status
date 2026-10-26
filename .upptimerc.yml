@@ -32,7 +32,9 @@ status-website:
   cname: status.grovlix.com
   logoUrl: https://raw.githubusercontent.com/Grovlix/status/master/assets/logos/grovlix.png
   favicon: https://raw.githubusercontent.com/Grovlix/status/master/assets/logos/grovlix.png
-  name: Grovlix Status
+  name: "Grovlix Status: Live Uptime of Grovlix Apps"
+  hideNavTitle: true
+  customHeadHtml: '<meta property="og:title" content="Grovlix Status | Live app uptime"><meta property="og:description" content="Live status and uptime of Grovlix apps: PopupSnap popups, InstaFeed, Product Studio, PopAutomate, Lucky Wheel and Countdown Timer."><meta property="og:type" content="website"><meta property="og:url" content="https://status.grovlix.com/"><meta property="og:image" content="https://raw.githubusercontent.com/Grovlix/status/master/assets/logos/grovlix.png"><meta property="og:site_name" content="Grovlix Status">'
   metaTags:
     - name: "description"
       content: "Live status and uptime of Grovlix apps: PopupSnap popups, InstaFeed, Product Studio, PopAutomate, Lucky Wheel and Countdown Timer."
