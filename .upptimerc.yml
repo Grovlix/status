@@ -23,5 +23,60 @@ status-website:
       href: /
     - title: GitHub
       href: https://github.com/$OWNER/$REPO
+  css: |
+    section.live-status article{background-image:none!important}
+    section.live-status article h4{display:flex;align-items:center;gap:8px}
+    .gx-head{margin-left:auto;display:flex;align-items:center;gap:12px;font-weight:400;font-size:.9rem}
+    .gx-pct{color:#5fd38d}
+    .gx-pill{padding:2px 10px;border-radius:999px;font-size:.8rem;font-weight:600}
+    .gx-up{background:rgba(95,211,141,.15);color:#5fd38d}
+    .gx-down{background:rgba(239,83,80,.18);color:#ef5350}
+    .gx-bars{display:flex;gap:2px;margin-top:12px;height:32px}
+    .gx-bar{flex:1;border-radius:2px;position:relative;cursor:default}
+    .gx-ok{background:#3ecf8e}.gx-warn{background:#f5a524}.gx-bad{background:#ef5350}.gx-none{background:rgba(255,255,255,.12)}
+    .gx-bar:hover{opacity:.7}
+    .gx-bar:hover::after{content:attr(data-tip);position:absolute;bottom:40px;left:50%;transform:translateX(-50%);white-space:nowrap;background:#111;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;z-index:10}
+    .gx-lab{display:flex;justify-content:space-between;font-size:.75rem;opacity:.6;margin-top:6px}
+  js: |
+    (function(){
+    var START='2026-10-26', DAYS=90, data=null;
+    function fmt(d){return d.toISOString().slice(0,10);}
+    function load(){fetch('https://raw.githubusercontent.com/Grovlix/status/master/history/summary.json?t='+Date.now()).then(function(r){return r.json();}).then(function(j){data=j;apply();});}
+    function bars(site){
+      var wrap=document.createElement('div');wrap.className='gx-bars';
+      var today=new Date();today.setUTCHours(0,0,0,0);
+      var down=site.dailyMinutesDown||{};
+      for(var i=DAYS-1;i>=0;i--){
+        var d=new Date(today.getTime()-i*86400000), k=fmt(d), b=document.createElement('span');
+        var m=down[k]||0, cls, tip;
+        if(k<START){cls='gx-none';tip=k+': no data';}
+        else if(m===0){cls='gx-ok';tip=k+': no downtime';}
+        else if(m<=30){cls='gx-warn';tip=k+': '+m+' min down';}
+        else{cls='gx-bad';tip=k+': '+m+' min down';}
+        b.className='gx-bar '+cls;b.setAttribute('data-tip',tip);wrap.appendChild(b);
+      }
+      return wrap;
+    }
+    function apply(){
+      if(!data)return;
+      var f=document.querySelector('form.f.r');if(f)f.style.display='none';
+      var cards=document.querySelectorAll('section.live-status article');
+      cards.forEach(function(card){
+        if(card.querySelector('.gx-bars'))return;
+        var a=card.querySelector('h4 a');if(!a)return;
+        var site=data.find(function(s){return a.href.indexOf('/history/'+s.slug)>-1;});if(!site)return;
+        card.classList.remove('graph');card.style.removeProperty('--background');
+        var divs=card.querySelectorAll(':scope > div');divs.forEach(function(d){d.style.display='none';});
+        var head=document.createElement('div');head.className='gx-head';
+        var up=site.status==='up';
+        head.innerHTML='<span class="gx-pct">'+site.uptime+' uptime</span><span class="gx-pill '+(up?'gx-up':'gx-down')+'">'+(up?'Up':'Down')+'</span>';
+        card.querySelector('h4').appendChild(head);
+        card.appendChild(bars(site));
+        var lab=document.createElement('div');lab.className='gx-lab';lab.innerHTML='<span>90 days ago</span><span>Today</span>';card.appendChild(lab);
+      });
+    }
+    new MutationObserver(apply).observe(document.documentElement,{childList:true,subtree:true});
+    load();
+    })();
 
 # See https://upptime.js.org/docs/configuration
