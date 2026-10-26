@@ -8,7 +8,7 @@ sites:
     slug: popup-snap
     icon: https://raw.githubusercontent.com/Grovlix/status/master/assets/logos/popupsnap.svg
   - name: InstaFeed
-    url: https://instafeed.popupsnap.com/health
+    url: https://instafeed.popupsnap.com/api/health/ready
     slug: insta-feed
     icon: https://raw.githubusercontent.com/Grovlix/status/master/assets/logos/instafeed.png
   - name: Product Studio
