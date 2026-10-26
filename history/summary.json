@@ -1,8 +1,8 @@
 [
   {
     "name": "PopupSnap",
-    "url": "https://popupsnap.com",
-    "icon": "https://icons.duckduckgo.com/ip3/popupsnap.com.ico",
+    "url": "https://popupsnap.com/health/release",
+    "icon": "https://raw.githubusercontent.com/Grovlix/status/master/assets/logos/popupsnap.svg",
     "slug": "popup-snap",
     "status": "up",
     "uptime": "100.00%",
@@ -20,7 +20,7 @@
   {
     "name": "InstaFeed",
     "url": "https://instafeed.popupsnap.com/health",
-    "icon": "https://icons.duckduckgo.com/ip3/instafeed.popupsnap.com.ico",
+    "icon": "https://raw.githubusercontent.com/Grovlix/status/master/assets/logos/instafeed.png",
     "slug": "insta-feed",
     "status": "up",
     "uptime": "100.00%",
@@ -38,7 +38,7 @@
   {
     "name": "Product Studio",
     "url": "https://customizer.popupsnap.com/api/health",
-    "icon": "https://icons.duckduckgo.com/ip3/customizer.popupsnap.com.ico",
+    "icon": "https://raw.githubusercontent.com/Grovlix/status/master/assets/logos/productstudio.png",
     "slug": "product-studio",
     "status": "up",
     "uptime": "100.00%",
@@ -56,7 +56,7 @@
   {
     "name": "PopAutomate",
     "url": "https://popautomate.com",
-    "icon": "https://icons.duckduckgo.com/ip3/popautomate.com.ico",
+    "icon": "https://raw.githubusercontent.com/Grovlix/status/master/assets/logos/popautomate.png",
     "slug": "pop-automate",
     "status": "up",
     "uptime": "100.00%",
@@ -69,6 +69,42 @@
     "timeWeek": 748,
     "timeMonth": 748,
     "timeYear": 748,
+    "dailyMinutesDown": {}
+  },
+  {
+    "name": "Lucky Wheel",
+    "url": "https://popupsnap.com/product/lucky-wheel",
+    "icon": "https://raw.githubusercontent.com/Grovlix/status/master/assets/logos/luckywheel.svg",
+    "slug": "lucky-wheel",
+    "status": "up",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 775,
+    "timeDay": 775,
+    "timeWeek": 775,
+    "timeMonth": 775,
+    "timeYear": 775,
+    "dailyMinutesDown": {}
+  },
+  {
+    "name": "Countdown Timer",
+    "url": "https://popupsnap.com/product/countdown",
+    "icon": "https://raw.githubusercontent.com/Grovlix/status/master/assets/logos/countdown.svg",
+    "slug": "countdown-timer",
+    "status": "up",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 1041,
+    "timeDay": 1041,
+    "timeWeek": 1041,
+    "timeMonth": 1041,
+    "timeYear": 1041,
     "dailyMinutesDown": {}
   }
 ]
